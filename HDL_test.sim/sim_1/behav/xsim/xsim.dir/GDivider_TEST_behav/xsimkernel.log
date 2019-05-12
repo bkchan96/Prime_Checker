@@ -1,0 +1,7 @@
+Running: xsim.dir/GDivider_TEST_behav/xsimk.exe -simmode gui -wdb GDivider_TEST_behav.wdb -simrunnum 0 -socket 50342
+Design successfully loaded
+Design Loading Memory Usage: 6256 KB (Peak: 6256 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6868 KB (Peak: 6868 KB)
+Simulation CPU Usage: 30 ms
