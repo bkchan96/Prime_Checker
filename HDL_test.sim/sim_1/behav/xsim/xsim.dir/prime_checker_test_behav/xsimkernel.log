@@ -1,0 +1,4 @@
+Running: xsim.dir/prime_checker_test_behav/xsimk.exe -simmode gui -wdb prime_checker_test_behav.wdb -simrunnum 0 -socket 50893
+Design successfully loaded
+Design Loading Memory Usage: 6340 KB (Peak: 6340 KB)
+Design Loading CPU Usage: 0 ms

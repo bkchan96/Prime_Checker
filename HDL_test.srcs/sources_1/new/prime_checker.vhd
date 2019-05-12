@@ -7,7 +7,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity prime_checker is
     Generic (N : natural := 32;
              number_of_modules : integer := 10);
-    Port ( clk, go, reset : in STD_LOGIC;
+    Port ( clk, reset, go : in STD_LOGIC;
            number, start : in STD_LOGIC_VECTOR (N-1 downto 0);
            done, flag : out STD_LOGIC);
 end prime_checker;
@@ -106,7 +106,11 @@ begin
                     end if;
                 when FINISHED =>
                     done <= '1';
-                    state <= IDLE;
+                    if (reset = '1') then
+                        state <= IDLE;
+                    else
+                        state <= FINISHED;
+                    end if;
                 when others =>
                     state <= IDLE;
             end case;

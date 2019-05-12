@@ -1,10 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity test is
-end test;
+entity modulo_test is
+end modulo_test;
 
-architecture Behavioral of test is
+architecture Behavioral of modulo_test is
     COMPONENT modulo
         PORT(
              dividend : IN  std_logic_vector(3 downto 0);
