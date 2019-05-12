@@ -59,7 +59,7 @@ begin
     GEN_MODULO:
         for i in 0 to number_of_modules-1 generate
             MODULOX: modulo generic map (N => N)
-                            port map (dividend => start,
+                            port map (dividend => number,
                                       divisor => start_internal(i),
                                       go => go_internal,
                                       clk => clk,
@@ -83,10 +83,10 @@ begin
                     -- initialize working values
                     start_internal(0) <= start; 
                     for i in 1 to number_of_modules-1 loop
-                        if (std_logic_vector(unsigned(start_internal(i-1)) + one) >= number) then
+                        if (std_logic_vector(unsigned(start) + to_unsigned(i,N)) >= number) then
                             start_internal(i) <= (others => '0');
                         else
-                            start_internal(i) <= std_logic_vector(unsigned(start_internal(i-1)) + one);
+                            start_internal(i) <= std_logic_vector(unsigned(start) + to_unsigned(i,N));
                         end if;
                     end loop;
                     -- check next state conditions

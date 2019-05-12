@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Class Materials/HDL_test/HDL_test.runs/synth_1'
+HD_PWD='D:/Class Materials/Prime_Checker/HDL_test.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557698185">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557704282">
   <File Type="PA-TCL" Name="prime_checker.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="prime_checker_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="prime_checker_reports.tcl"/>
   <File Type="RDS-RDS" Name="prime_checker.vds"/>
+  <File Type="RDS-UTIL" Name="prime_checker_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="prime_checker_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="prime_checker.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="prime_checker_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="prime_checker_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/modulo.vhd">
@@ -31,7 +36,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

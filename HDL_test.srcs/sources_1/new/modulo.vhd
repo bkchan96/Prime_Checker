@@ -38,12 +38,12 @@ begin
         if rising_edge(clk) then
             case (state) is
                 when "00" =>
+                    done <= '0';
                     if(go='1') then
                         A <= unsigned(dividend);
                         B <= unsigned(divisor);
                         R <= (others => '0');
                         R0 <='0';
-                        done <= '0';
                         state <= "01";
                 end if;
                 when "01" =>
