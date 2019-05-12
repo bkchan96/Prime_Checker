@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity modulo is
-    Generic (N : natural := 32);
+    Generic (N : natural := 4);
     Port ( dividend : in  STD_LOGIC_VECTOR (N - 1 downto 0);
            divisor : in  STD_LOGIC_VECTOR (N -1 downto 0);
            go,clk : in  STD_LOGIC;
@@ -69,6 +69,6 @@ begin
     end process;
     
     -- output and check if the numbers divide evenly
-    divides_evenly <= '0' when (remainder = zero) else '1';
+    divides_evenly <= '1' when (remainder = zero) else '0';
     
 end Behavioral;

@@ -47,6 +47,10 @@ architecture Behavioral of test is
             wait for clk_period*15;
             dividend <= "1111"; divisor<="0101"; go <= '1';
             wait for clk_period;
+            go <= '0';
+            wait for clk_period*15;
+            dividend <= "1111"; divisor<="0000"; go <= '1';
+            wait for clk_period;
             go <= '0'; 
             wait for clk_period*15;
             wait;

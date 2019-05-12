@@ -40,12 +40,15 @@ architecture Behavioral of prime_checker is
     -- divides_evenly "array"
     signal divides_evenly_internal : std_logic_vector (number_of_modules-1 downto 0);
     
-    -------------------------------------------------------------------------------------------------
-    -- declare internal signals/register
-    -------------------------------------------------------------------------------------------------
+    -- internal go signal
+    signal go_internal : std_logic;
     
     -- state signal
-    type state_type is (IDLE
+    type state_type is (IDLE, PROCESSING, FINISHED);
+    signal state : state_type := IDLE;
+    
+    -- one constant
+    constant one : unsigned (N-1 downto 0) := to_unsigned(1,N); 
     
 begin
     -------------------------------------------------------------------------------------------------
@@ -58,7 +61,7 @@ begin
             MODULOX: modulo generic map (N => N)
                             port map (dividend => start,
                                       divisor => start_internal(i),
-                                      go => go,
+                                      go => go_internal,
                                       clk => clk,
                                       done => done_internal(i),
                                       divides_evenly => divides_evenly_internal(i));
@@ -67,14 +70,48 @@ begin
     -- tie divides_evenly together with reduction or
     flag <= or_reduce(divides_evenly_internal);
     
-    -- tie done bits with reduction or
-    --done <= or_reduce(done_internal);
-    
     -------------------------------------------------------------------------------------------------
     -- internal state machines
     -------------------------------------------------------------------------------------------------
     
-    
+    -- run state machine
+    process (clk) begin
+        if rising_edge(clk) then
+            case (state) is
+                when IDLE =>
+                    done <= '0';
+                    -- initialize working values
+                    start_internal(0) <= start; 
+                    for i in 1 to number_of_modules-1 loop
+                        if (std_logic_vector(unsigned(start_internal(i-1)) + one) >= number) then
+                            start_internal(i) <= (others => '0');
+                        else
+                            start_internal(i) <= std_logic_vector(unsigned(start_internal(i-1)) + one);
+                        end if;
+                    end loop;
+                    -- check next state conditions
+                    if (go = '1') then
+                        go_internal <= '1';
+                        state <= PROCESSING;
+                    else
+                        go_internal <= '0';
+                        state <= IDLE;
+                    end if;
+                when PROCESSING =>
+                    go_internal <= '0';
+                    if (or_reduce(done_internal) = '1') then
+                        state <= FINISHED;
+                    else
+                        state <= PROCESSING;
+                    end if;
+                when FINISHED =>
+                    done <= '1';
+                    state <= IDLE;
+                when others =>
+                    state <= IDLE;
+            end case;
+        end if;
+    end process;
     
     
 end Behavioral;
