@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun May 12 16:38:34 2019
+| Date         : Sun May 12 17:13:16 2019
 | Host         : Bryan-PC running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file prime_checker_utilization_synth.rpt -pb prime_checker_utilization_synth.pb
 | Design       : prime_checker
@@ -27,18 +27,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1856 |     0 |     63400 |  2.93 |
-|   LUT as Logic          | 1856 |     0 |     63400 |  2.93 |
-|   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 1965 |     0 |    126800 |  1.55 |
-|   Register as Flip Flop | 1965 |     0 |    126800 |  1.55 |
-|   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |    0 |     0 |     31700 |  0.00 |
-| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++-------------------------+-------+-------+-----------+-------+
+|        Site Type        |  Used | Fixed | Available | Util% |
++-------------------------+-------+-------+-----------+-------+
+| Slice LUTs*             | 57107 |     0 |     63400 | 90.07 |
+|   LUT as Logic          | 57107 |     0 |     63400 | 90.07 |
+|   LUT as Memory         |     0 |     0 |     19000 |  0.00 |
+| Slice Registers         | 58818 |     0 |    126800 | 46.39 |
+|   Register as Flip Flop | 58818 |     0 |    126800 | 46.39 |
+|   Register as Latch     |     0 |     0 |    126800 |  0.00 |
+| F7 Muxes                |     0 |     0 |     31700 |  0.00 |
+| F8 Muxes                |     0 |     0 |     15850 |  0.00 |
++-------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 1965  |          Yes |       Reset |            - |
+| 58818 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -143,21 +143,21 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     | 1965 |        Flop & Latch |
-| LUT4     |  712 |                 LUT |
-| LUT5     |  672 |                 LUT |
-| LUT2     |  362 |                 LUT |
-| LUT1     |  331 |                 LUT |
-| CARRY4   |  318 |          CarryLogic |
-| LUT6     |   84 |                 LUT |
-| IBUF     |   67 |                  IO |
-| LUT3     |   10 |                 LUT |
-| OBUF     |    2 |                  IO |
-| BUFG     |    1 |               Clock |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| FDRE     | 58818 |        Flop & Latch |
+| LUT4     | 22185 |                 LUT |
+| LUT5     | 20101 |                 LUT |
+| LUT2     | 11410 |                 LUT |
+| LUT1     | 10631 |                 LUT |
+| CARRY4   |  9879 |          CarryLogic |
+| LUT6     |  2518 |                 LUT |
+| LUT3     |   305 |                 LUT |
+| IBUF     |    67 |                  IO |
+| OBUF     |     2 |                  IO |
+| BUFG     |     1 |               Clock |
++----------+-------+---------------------+
 
 
 8. Black Boxes
