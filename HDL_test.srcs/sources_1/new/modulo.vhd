@@ -12,7 +12,8 @@ end modulo;
 
 architecture Behavioral of modulo is
     -- Interntal Registers
-    signal state : std_logic_vector(1 downto 0) :="00";
+    type state_type is (IDLE, SETUP, PROCESSING);
+    signal state : state_type := IDLE;
     signal Q : unsigned(2*N downto 0) := (others => '0');
     signal B : unsigned(N - 1 downto 0) := (others => '0');
     signal counter : natural:=0;
@@ -37,33 +38,33 @@ begin
     process (clk) begin
         if rising_edge(clk) then
             case (state) is
-                when "00" =>
+                when IDLE =>
                     done <= '0';
                     if(go='1') then
                         A <= unsigned(dividend);
                         B <= unsigned(divisor);
                         R <= (others => '0');
                         R0 <='0';
-                        state <= "01";
+                        state <= SETUP;
                 end if;
-                when "01" =>
+                when SETUP =>
                     counter <= N;
-                    Q <= (Q(2*N-1 downto 0)&'0');
-                    state <= "10";
-                when "10" =>
+                    Q <= shift_left(Q,1);
+                    state <= PROCESSING;
+                when PROCESSING =>
                     if((R & R0) >= B) then 
-                        Q <= (difference(N-1 downto 0)& A(N -1 downto 0)& '1');
+                        Q <= (difference(N-1 downto 0)& A(N-1 downto 0)& '1');
                     else
-                        Q <= (Q(2*N-1 downto 0)&'0');
+                        Q <= shift_left(Q,1);
                     end if;
                     if(counter = 0) then
                         done <= '1';
                         remainder <= std_logic_vector(R);
-                        state <="00";
+                        state <= IDLE;
                     end if;
                     counter <= counter -1;
                 when others =>
-                    state <= "00";
+                    state <= IDLE;
             end case;
         end if;
     end process;
