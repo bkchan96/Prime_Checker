@@ -9,7 +9,8 @@ entity prime_checker is
              number_of_modules : integer := 300);
     Port ( clk, reset, go : in STD_LOGIC;
            number, start : in STD_LOGIC_VECTOR (N-1 downto 0);
-           done, flag : out STD_LOGIC);
+           done : out STD_LOGIC := '0';
+           flag : out STD_LOGIC);
 end prime_checker;
 
 architecture Behavioral of prime_checker is
@@ -99,7 +100,7 @@ begin
                     end if;
                 when PROCESSING =>
                     go_internal <= '0';
-                    if (or_reduce(done_internal) = '1') then
+                    if (and_reduce(done_internal) = '1') then
                         state <= FINISHED;
                     else
                         state <= PROCESSING;
