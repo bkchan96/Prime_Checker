@@ -1,0 +1,426 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date             : Sun May 12 23:31:09 2019
+| Host             : Bryan-PC running 64-bit Service Pack 1  (build 7601)
+| Command          : report_power -file prime_checker_power_routed.rpt -pb prime_checker_power_summary_routed.pb -rpx prime_checker_power_routed.rpx
+| Design           : prime_checker
+| Device           : xc7a100tcsg324-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.450        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.365        |
+| Device Static (W)        | 0.085        |
+| Effective TJA (C/W)      | 4.6          |
+| Max Ambient (C)          | 82.9         |
+| Junction Temperature (C) | 27.1         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.115 |        3 |       --- |             --- |
+| Slice Logic    |     0.128 |   127068 |       --- |             --- |
+|   LUT as Logic |     0.094 |    52552 |     63400 |           82.89 |
+|   CARRY4       |     0.028 |     9220 |     15850 |           58.17 |
+|   Register     |     0.006 |    54893 |    126800 |           43.29 |
+|   Others       |     0.000 |      562 |       --- |             --- |
+| Signals        |     0.122 |    87339 |       --- |             --- |
+| I/O            |    <0.001 |       69 |       210 |           32.86 |
+| Static Power   |     0.085 |          |           |                 |
+| Total          |     0.450 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.381 |       0.365 |      0.016 |
+| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 4.6                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------------+--------+-----------------+
+| Clock       | Domain | Constraint (ns) |
++-------------+--------+-----------------+
+| sys_clk_pin | clk    |            10.0 |
++-------------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++---------------------------+-----------+
+| Name                      | Power (W) |
++---------------------------+-----------+
+| prime_checker             |     0.365 |
+|   GEN_MODULO[0].MODULOX   |    <0.001 |
+|   GEN_MODULO[100].MODULOX |    <0.001 |
+|   GEN_MODULO[101].MODULOX |    <0.001 |
+|   GEN_MODULO[102].MODULOX |    <0.001 |
+|   GEN_MODULO[103].MODULOX |    <0.001 |
+|   GEN_MODULO[104].MODULOX |    <0.001 |
+|   GEN_MODULO[105].MODULOX |    <0.001 |
+|   GEN_MODULO[106].MODULOX |    <0.001 |
+|   GEN_MODULO[107].MODULOX |    <0.001 |
+|   GEN_MODULO[108].MODULOX |    <0.001 |
+|   GEN_MODULO[109].MODULOX |    <0.001 |
+|   GEN_MODULO[10].MODULOX  |    <0.001 |
+|   GEN_MODULO[110].MODULOX |    <0.001 |
+|   GEN_MODULO[111].MODULOX |    <0.001 |
+|   GEN_MODULO[112].MODULOX |    <0.001 |
+|   GEN_MODULO[113].MODULOX |    <0.001 |
+|   GEN_MODULO[114].MODULOX |    <0.001 |
+|   GEN_MODULO[115].MODULOX |    <0.001 |
+|   GEN_MODULO[116].MODULOX |    <0.001 |
+|   GEN_MODULO[117].MODULOX |    <0.001 |
+|   GEN_MODULO[118].MODULOX |    <0.001 |
+|   GEN_MODULO[119].MODULOX |    <0.001 |
+|   GEN_MODULO[11].MODULOX  |    <0.001 |
+|   GEN_MODULO[120].MODULOX |    <0.001 |
+|   GEN_MODULO[121].MODULOX |    <0.001 |
+|   GEN_MODULO[122].MODULOX |    <0.001 |
+|   GEN_MODULO[123].MODULOX |    <0.001 |
+|   GEN_MODULO[124].MODULOX |    <0.001 |
+|   GEN_MODULO[125].MODULOX |    <0.001 |
+|   GEN_MODULO[126].MODULOX |    <0.001 |
+|   GEN_MODULO[127].MODULOX |    <0.001 |
+|   GEN_MODULO[128].MODULOX |    <0.001 |
+|   GEN_MODULO[129].MODULOX |    <0.001 |
+|   GEN_MODULO[12].MODULOX  |    <0.001 |
+|   GEN_MODULO[130].MODULOX |    <0.001 |
+|   GEN_MODULO[131].MODULOX |    <0.001 |
+|   GEN_MODULO[132].MODULOX |    <0.001 |
+|   GEN_MODULO[133].MODULOX |    <0.001 |
+|   GEN_MODULO[134].MODULOX |    <0.001 |
+|   GEN_MODULO[135].MODULOX |    <0.001 |
+|   GEN_MODULO[136].MODULOX |    <0.001 |
+|   GEN_MODULO[137].MODULOX |    <0.001 |
+|   GEN_MODULO[138].MODULOX |    <0.001 |
+|   GEN_MODULO[139].MODULOX |    <0.001 |
+|   GEN_MODULO[13].MODULOX  |    <0.001 |
+|   GEN_MODULO[140].MODULOX |    <0.001 |
+|   GEN_MODULO[141].MODULOX |    <0.001 |
+|   GEN_MODULO[142].MODULOX |    <0.001 |
+|   GEN_MODULO[143].MODULOX |    <0.001 |
+|   GEN_MODULO[144].MODULOX |    <0.001 |
+|   GEN_MODULO[145].MODULOX |    <0.001 |
+|   GEN_MODULO[146].MODULOX |    <0.001 |
+|   GEN_MODULO[147].MODULOX |    <0.001 |
+|   GEN_MODULO[148].MODULOX |    <0.001 |
+|   GEN_MODULO[149].MODULOX |    <0.001 |
+|   GEN_MODULO[14].MODULOX  |    <0.001 |
+|   GEN_MODULO[150].MODULOX |    <0.001 |
+|   GEN_MODULO[151].MODULOX |    <0.001 |
+|   GEN_MODULO[152].MODULOX |    <0.001 |
+|   GEN_MODULO[153].MODULOX |    <0.001 |
+|   GEN_MODULO[154].MODULOX |    <0.001 |
+|   GEN_MODULO[155].MODULOX |    <0.001 |
+|   GEN_MODULO[156].MODULOX |    <0.001 |
+|   GEN_MODULO[157].MODULOX |    <0.001 |
+|   GEN_MODULO[158].MODULOX |    <0.001 |
+|   GEN_MODULO[159].MODULOX |    <0.001 |
+|   GEN_MODULO[15].MODULOX  |    <0.001 |
+|   GEN_MODULO[160].MODULOX |    <0.001 |
+|   GEN_MODULO[161].MODULOX |    <0.001 |
+|   GEN_MODULO[162].MODULOX |    <0.001 |
+|   GEN_MODULO[163].MODULOX |    <0.001 |
+|   GEN_MODULO[164].MODULOX |    <0.001 |
+|   GEN_MODULO[165].MODULOX |    <0.001 |
+|   GEN_MODULO[166].MODULOX |    <0.001 |
+|   GEN_MODULO[167].MODULOX |    <0.001 |
+|   GEN_MODULO[168].MODULOX |    <0.001 |
+|   GEN_MODULO[169].MODULOX |    <0.001 |
+|   GEN_MODULO[16].MODULOX  |    <0.001 |
+|   GEN_MODULO[170].MODULOX |    <0.001 |
+|   GEN_MODULO[171].MODULOX |    <0.001 |
+|   GEN_MODULO[172].MODULOX |    <0.001 |
+|   GEN_MODULO[173].MODULOX |     0.001 |
+|   GEN_MODULO[174].MODULOX |    <0.001 |
+|   GEN_MODULO[175].MODULOX |    <0.001 |
+|   GEN_MODULO[176].MODULOX |    <0.001 |
+|   GEN_MODULO[177].MODULOX |    <0.001 |
+|   GEN_MODULO[178].MODULOX |    <0.001 |
+|   GEN_MODULO[179].MODULOX |    <0.001 |
+|   GEN_MODULO[17].MODULOX  |    <0.001 |
+|   GEN_MODULO[180].MODULOX |    <0.001 |
+|   GEN_MODULO[181].MODULOX |    <0.001 |
+|   GEN_MODULO[182].MODULOX |    <0.001 |
+|   GEN_MODULO[183].MODULOX |    <0.001 |
+|   GEN_MODULO[184].MODULOX |    <0.001 |
+|   GEN_MODULO[185].MODULOX |    <0.001 |
+|   GEN_MODULO[186].MODULOX |    <0.001 |
+|   GEN_MODULO[187].MODULOX |    <0.001 |
+|   GEN_MODULO[188].MODULOX |    <0.001 |
+|   GEN_MODULO[189].MODULOX |    <0.001 |
+|   GEN_MODULO[18].MODULOX  |    <0.001 |
+|   GEN_MODULO[190].MODULOX |    <0.001 |
+|   GEN_MODULO[191].MODULOX |    <0.001 |
+|   GEN_MODULO[192].MODULOX |    <0.001 |
+|   GEN_MODULO[193].MODULOX |    <0.001 |
+|   GEN_MODULO[194].MODULOX |    <0.001 |
+|   GEN_MODULO[195].MODULOX |    <0.001 |
+|   GEN_MODULO[196].MODULOX |    <0.001 |
+|   GEN_MODULO[197].MODULOX |    <0.001 |
+|   GEN_MODULO[198].MODULOX |    <0.001 |
+|   GEN_MODULO[199].MODULOX |    <0.001 |
+|   GEN_MODULO[19].MODULOX  |    <0.001 |
+|   GEN_MODULO[1].MODULOX   |    <0.001 |
+|   GEN_MODULO[200].MODULOX |    <0.001 |
+|   GEN_MODULO[201].MODULOX |    <0.001 |
+|   GEN_MODULO[202].MODULOX |    <0.001 |
+|   GEN_MODULO[203].MODULOX |    <0.001 |
+|   GEN_MODULO[204].MODULOX |    <0.001 |
+|   GEN_MODULO[205].MODULOX |    <0.001 |
+|   GEN_MODULO[206].MODULOX |    <0.001 |
+|   GEN_MODULO[207].MODULOX |    <0.001 |
+|   GEN_MODULO[208].MODULOX |    <0.001 |
+|   GEN_MODULO[209].MODULOX |    <0.001 |
+|   GEN_MODULO[20].MODULOX  |    <0.001 |
+|   GEN_MODULO[210].MODULOX |    <0.001 |
+|   GEN_MODULO[211].MODULOX |    <0.001 |
+|   GEN_MODULO[212].MODULOX |    <0.001 |
+|   GEN_MODULO[213].MODULOX |    <0.001 |
+|   GEN_MODULO[214].MODULOX |    <0.001 |
+|   GEN_MODULO[215].MODULOX |    <0.001 |
+|   GEN_MODULO[216].MODULOX |    <0.001 |
+|   GEN_MODULO[217].MODULOX |    <0.001 |
+|   GEN_MODULO[218].MODULOX |    <0.001 |
+|   GEN_MODULO[219].MODULOX |    <0.001 |
+|   GEN_MODULO[21].MODULOX  |    <0.001 |
+|   GEN_MODULO[220].MODULOX |    <0.001 |
+|   GEN_MODULO[221].MODULOX |    <0.001 |
+|   GEN_MODULO[222].MODULOX |    <0.001 |
+|   GEN_MODULO[223].MODULOX |    <0.001 |
+|   GEN_MODULO[224].MODULOX |    <0.001 |
+|   GEN_MODULO[225].MODULOX |    <0.001 |
+|   GEN_MODULO[226].MODULOX |    <0.001 |
+|   GEN_MODULO[227].MODULOX |    <0.001 |
+|   GEN_MODULO[228].MODULOX |    <0.001 |
+|   GEN_MODULO[229].MODULOX |    <0.001 |
+|   GEN_MODULO[22].MODULOX  |    <0.001 |
+|   GEN_MODULO[230].MODULOX |    <0.001 |
+|   GEN_MODULO[231].MODULOX |    <0.001 |
+|   GEN_MODULO[232].MODULOX |    <0.001 |
+|   GEN_MODULO[233].MODULOX |    <0.001 |
+|   GEN_MODULO[234].MODULOX |    <0.001 |
+|   GEN_MODULO[235].MODULOX |    <0.001 |
+|   GEN_MODULO[236].MODULOX |    <0.001 |
+|   GEN_MODULO[237].MODULOX |    <0.001 |
+|   GEN_MODULO[238].MODULOX |    <0.001 |
+|   GEN_MODULO[239].MODULOX |    <0.001 |
+|   GEN_MODULO[23].MODULOX  |    <0.001 |
+|   GEN_MODULO[240].MODULOX |    <0.001 |
+|   GEN_MODULO[241].MODULOX |    <0.001 |
+|   GEN_MODULO[242].MODULOX |    <0.001 |
+|   GEN_MODULO[243].MODULOX |    <0.001 |
+|   GEN_MODULO[244].MODULOX |    <0.001 |
+|   GEN_MODULO[245].MODULOX |    <0.001 |
+|   GEN_MODULO[246].MODULOX |    <0.001 |
+|   GEN_MODULO[247].MODULOX |    <0.001 |
+|   GEN_MODULO[248].MODULOX |    <0.001 |
+|   GEN_MODULO[249].MODULOX |    <0.001 |
+|   GEN_MODULO[24].MODULOX  |    <0.001 |
+|   GEN_MODULO[250].MODULOX |    <0.001 |
+|   GEN_MODULO[251].MODULOX |    <0.001 |
+|   GEN_MODULO[252].MODULOX |    <0.001 |
+|   GEN_MODULO[253].MODULOX |    <0.001 |
+|   GEN_MODULO[254].MODULOX |    <0.001 |
+|   GEN_MODULO[255].MODULOX |    <0.001 |
+|   GEN_MODULO[256].MODULOX |    <0.001 |
+|   GEN_MODULO[257].MODULOX |    <0.001 |
+|   GEN_MODULO[258].MODULOX |    <0.001 |
+|   GEN_MODULO[259].MODULOX |    <0.001 |
+|   GEN_MODULO[25].MODULOX  |    <0.001 |
+|   GEN_MODULO[260].MODULOX |    <0.001 |
+|   GEN_MODULO[261].MODULOX |    <0.001 |
+|   GEN_MODULO[262].MODULOX |    <0.001 |
+|   GEN_MODULO[263].MODULOX |    <0.001 |
+|   GEN_MODULO[264].MODULOX |    <0.001 |
+|   GEN_MODULO[265].MODULOX |    <0.001 |
+|   GEN_MODULO[266].MODULOX |    <0.001 |
+|   GEN_MODULO[267].MODULOX |    <0.001 |
+|   GEN_MODULO[268].MODULOX |    <0.001 |
+|   GEN_MODULO[269].MODULOX |    <0.001 |
+|   GEN_MODULO[26].MODULOX  |    <0.001 |
+|   GEN_MODULO[270].MODULOX |    <0.001 |
+|   GEN_MODULO[271].MODULOX |    <0.001 |
+|   GEN_MODULO[272].MODULOX |    <0.001 |
+|   GEN_MODULO[273].MODULOX |     0.001 |
+|   GEN_MODULO[274].MODULOX |    <0.001 |
+|   GEN_MODULO[275].MODULOX |    <0.001 |
+|   GEN_MODULO[276].MODULOX |    <0.001 |
+|   GEN_MODULO[277].MODULOX |    <0.001 |
+|   GEN_MODULO[278].MODULOX |    <0.001 |
+|   GEN_MODULO[279].MODULOX |    <0.001 |
+|   GEN_MODULO[27].MODULOX  |    <0.001 |
+|   GEN_MODULO[28].MODULOX  |    <0.001 |
+|   GEN_MODULO[29].MODULOX  |    <0.001 |
+|   GEN_MODULO[2].MODULOX   |    <0.001 |
+|   GEN_MODULO[30].MODULOX  |    <0.001 |
+|   GEN_MODULO[31].MODULOX  |    <0.001 |
+|   GEN_MODULO[32].MODULOX  |    <0.001 |
+|   GEN_MODULO[33].MODULOX  |    <0.001 |
+|   GEN_MODULO[34].MODULOX  |    <0.001 |
+|   GEN_MODULO[35].MODULOX  |    <0.001 |
+|   GEN_MODULO[36].MODULOX  |    <0.001 |
+|   GEN_MODULO[37].MODULOX  |    <0.001 |
+|   GEN_MODULO[38].MODULOX  |    <0.001 |
+|   GEN_MODULO[39].MODULOX  |    <0.001 |
+|   GEN_MODULO[3].MODULOX   |    <0.001 |
+|   GEN_MODULO[40].MODULOX  |    <0.001 |
+|   GEN_MODULO[41].MODULOX  |    <0.001 |
+|   GEN_MODULO[42].MODULOX  |    <0.001 |
+|   GEN_MODULO[43].MODULOX  |    <0.001 |
+|   GEN_MODULO[44].MODULOX  |    <0.001 |
+|   GEN_MODULO[45].MODULOX  |    <0.001 |
+|   GEN_MODULO[46].MODULOX  |    <0.001 |
+|   GEN_MODULO[47].MODULOX  |    <0.001 |
+|   GEN_MODULO[48].MODULOX  |    <0.001 |
+|   GEN_MODULO[49].MODULOX  |    <0.001 |
+|   GEN_MODULO[4].MODULOX   |    <0.001 |
+|   GEN_MODULO[50].MODULOX  |    <0.001 |
+|   GEN_MODULO[51].MODULOX  |    <0.001 |
+|   GEN_MODULO[52].MODULOX  |    <0.001 |
+|   GEN_MODULO[53].MODULOX  |    <0.001 |
+|   GEN_MODULO[54].MODULOX  |    <0.001 |
+|   GEN_MODULO[55].MODULOX  |    <0.001 |
+|   GEN_MODULO[56].MODULOX  |    <0.001 |
+|   GEN_MODULO[57].MODULOX  |    <0.001 |
+|   GEN_MODULO[58].MODULOX  |    <0.001 |
+|   GEN_MODULO[59].MODULOX  |    <0.001 |
+|   GEN_MODULO[5].MODULOX   |    <0.001 |
+|   GEN_MODULO[60].MODULOX  |    <0.001 |
+|   GEN_MODULO[61].MODULOX  |    <0.001 |
+|   GEN_MODULO[62].MODULOX  |    <0.001 |
+|   GEN_MODULO[63].MODULOX  |    <0.001 |
+|   GEN_MODULO[64].MODULOX  |    <0.001 |
+|   GEN_MODULO[65].MODULOX  |    <0.001 |
+|   GEN_MODULO[66].MODULOX  |    <0.001 |
+|   GEN_MODULO[67].MODULOX  |    <0.001 |
+|   GEN_MODULO[68].MODULOX  |    <0.001 |
+|   GEN_MODULO[69].MODULOX  |    <0.001 |
+|   GEN_MODULO[6].MODULOX   |    <0.001 |
+|   GEN_MODULO[70].MODULOX  |    <0.001 |
+|   GEN_MODULO[71].MODULOX  |    <0.001 |
+|   GEN_MODULO[72].MODULOX  |    <0.001 |
+|   GEN_MODULO[73].MODULOX  |    <0.001 |
+|   GEN_MODULO[74].MODULOX  |    <0.001 |
+|   GEN_MODULO[75].MODULOX  |    <0.001 |
+|   GEN_MODULO[76].MODULOX  |    <0.001 |
+|   GEN_MODULO[77].MODULOX  |    <0.001 |
+|   GEN_MODULO[78].MODULOX  |    <0.001 |
+|   GEN_MODULO[79].MODULOX  |    <0.001 |
+|   GEN_MODULO[7].MODULOX   |    <0.001 |
+|   GEN_MODULO[80].MODULOX  |    <0.001 |
+|   GEN_MODULO[81].MODULOX  |    <0.001 |
+|   GEN_MODULO[82].MODULOX  |    <0.001 |
+|   GEN_MODULO[83].MODULOX  |    <0.001 |
+|   GEN_MODULO[84].MODULOX  |    <0.001 |
+|   GEN_MODULO[85].MODULOX  |     0.001 |
+|   GEN_MODULO[86].MODULOX  |    <0.001 |
+|   GEN_MODULO[87].MODULOX  |    <0.001 |
+|   GEN_MODULO[88].MODULOX  |    <0.001 |
+|   GEN_MODULO[89].MODULOX  |    <0.001 |
+|   GEN_MODULO[8].MODULOX   |    <0.001 |
+|   GEN_MODULO[90].MODULOX  |    <0.001 |
+|   GEN_MODULO[91].MODULOX  |    <0.001 |
+|   GEN_MODULO[92].MODULOX  |    <0.001 |
+|   GEN_MODULO[93].MODULOX  |    <0.001 |
+|   GEN_MODULO[94].MODULOX  |    <0.001 |
+|   GEN_MODULO[95].MODULOX  |    <0.001 |
+|   GEN_MODULO[96].MODULOX  |    <0.001 |
+|   GEN_MODULO[97].MODULOX  |    <0.001 |
+|   GEN_MODULO[98].MODULOX  |    <0.001 |
+|   GEN_MODULO[99].MODULOX  |    <0.001 |
+|   GEN_MODULO[9].MODULOX   |    <0.001 |
++---------------------------+-----------+
+
+

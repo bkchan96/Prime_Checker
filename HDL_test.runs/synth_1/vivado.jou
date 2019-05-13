@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun May 12 22:42:10 2019
-# Process ID: 9208
+# Start of session at: Sun May 12 23:12:49 2019
+# Process ID: 10056
 # Current directory: D:/Class Materials/Prime_Checker/HDL_test.runs/synth_1
-# Command line: vivado.exe -log modulo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source modulo.tcl
-# Log file: D:/Class Materials/Prime_Checker/HDL_test.runs/synth_1/modulo.vds
+# Command line: vivado.exe -log prime_checker.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source prime_checker.tcl
+# Log file: D:/Class Materials/Prime_Checker/HDL_test.runs/synth_1/prime_checker.vds
 # Journal file: D:/Class Materials/Prime_Checker/HDL_test.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source modulo.tcl -notrace
+source prime_checker.tcl -notrace

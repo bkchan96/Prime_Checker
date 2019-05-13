@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_MISC.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity modulo is
@@ -70,6 +71,6 @@ begin
     end process;
     
     -- output and check if the numbers divide evenly
-    divides_evenly <= '1' when (remainder = zero) else '0';
+    divides_evenly <= not or_reduce(remainder);
     
 end Behavioral;

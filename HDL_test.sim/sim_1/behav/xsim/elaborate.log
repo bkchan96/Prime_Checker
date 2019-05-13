@@ -13,7 +13,7 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package synopsys.attributes
 Compiling package ieee.std_logic_misc
-Compiling architecture behavioral of entity xil_defaultlib.modulo [\modulo(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.modulo [modulo_default]
 Compiling architecture behavioral of entity xil_defaultlib.prime_checker [\prime_checker(number_of_modules...]
 Compiling architecture behavioral of entity xil_defaultlib.prime_checker_test
 Built simulation snapshot prime_checker_test_behav

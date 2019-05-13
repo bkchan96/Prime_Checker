@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557726128">
-  <File Type="PA-TCL" Name="modulo.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="modulo_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="modulo_reports.tcl"/>
-  <File Type="RDS-RDS" Name="modulo.vds"/>
-  <File Type="RDS-UTIL" Name="modulo_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="modulo_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="modulo.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="modulo_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="modulo_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1557727967">
+  <File Type="PA-TCL" Name="prime_checker.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="prime_checker_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="prime_checker_reports.tcl"/>
+  <File Type="RDS-RDS" Name="prime_checker.vds"/>
+  <File Type="RDS-UTIL" Name="prime_checker_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="prime_checker_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="prime_checker.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="prime_checker_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="prime_checker_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/modulo.vhd">
@@ -19,24 +19,33 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/prime_checker.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="modulo"/>
+      <Option Name="TopModule" Val="prime_checker"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/ECE 4304/Nexys-4-DRR-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ECE 4304/Nexys-4-DRR-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1557193656"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
