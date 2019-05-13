@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log prime_checker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source prime_checker.tcl" );
+         "-log modulo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source modulo.tcl" );
 
 
 

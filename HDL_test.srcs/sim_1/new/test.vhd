@@ -6,6 +6,7 @@ end modulo_test;
 
 architecture Behavioral of modulo_test is
     COMPONENT modulo
+        Generic (N : natural := 32);
         PORT(
              dividend : IN  std_logic_vector(3 downto 0);
              divisor : IN  std_logic_vector(3 downto 0);
@@ -27,7 +28,7 @@ architecture Behavioral of modulo_test is
     constant clk_period : time := 0.5 ns;
     
     begin
-        uut: modulo PORT MAP (dividend => dividend, divisor => divisor, go => go, clk => clk, done => done, divides_evenly => divides_evenly);
+        uut: modulo generic map (N => 4) PORT MAP (dividend => dividend, divisor => divisor, go => go, clk => clk, done => done, divides_evenly => divides_evenly);
         
         clk_process :process begin
             clk <= '0';

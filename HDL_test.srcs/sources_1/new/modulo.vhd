@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity modulo is
-    Generic (N : natural := 4);
+    Generic (N : natural := 32);
     Port ( dividend : in  STD_LOGIC_VECTOR (N - 1 downto 0);
            divisor : in  STD_LOGIC_VECTOR (N -1 downto 0);
            go,clk : in  STD_LOGIC;

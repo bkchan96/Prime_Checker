@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log prime_checker.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source prime_checker.tcl
+EAStep vivado -log modulo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source modulo.tcl
